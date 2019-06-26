@@ -1,3 +1,4 @@
 *.obj
 *.log
 *.tlog
+/rhino/GeneratedFiles/Release/*.cpp

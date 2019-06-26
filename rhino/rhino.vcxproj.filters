@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Source Files\gridcell">
+      <UniqueIdentifier>{e0c4499d-4462-4286-93fa-c949ea5584de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\time">
+      <UniqueIdentifier>{cc0b612b-1b7b-4d55-adde-b7ed3d56124c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\troop">
+      <UniqueIdentifier>{4e4df54d-7b25-4039-9083-4ae1311f8665}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\algo">
+      <UniqueIdentifier>{e7ff8de4-cf3a-4d1c-aeae-5920b0cf9c23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\factory">
+      <UniqueIdentifier>{f90e4589-36b2-4c9d-86f9-04fe732a8ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene">
+      <UniqueIdentifier>{0c8e92fb-b7cc-4399-851d-2a862ccba510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resource">
+      <UniqueIdentifier>{b5f1273c-c11e-40e9-9d46-949b9624bb44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entity">
+      <UniqueIdentifier>{cc4d7682-8213-482e-9c19-59479a35a471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gl">
+      <UniqueIdentifier>{700af150-124d-4ecb-98ec-3e5cc5e5db86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\boids">
+      <UniqueIdentifier>{27c5cab6-3b06-4309-b207-cc6b441943f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math">
+      <UniqueIdentifier>{17da3983-eaad-4511-aed1-aa8a14f6b6f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\zip">
+      <UniqueIdentifier>{fdb8aff8-0af1-4c24-b220-5bf83e1d6b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{80f1e517-c401-429d-95c1-b6df224d4447}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="world.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gridcell\gridCell4Manager.cpp">
+      <Filter>Source Files\gridcell</Filter>
+    </ClCompile>
+    <ClCompile Include="gridcell\gridCell6Manager.cpp">
+      <Filter>Source Files\gridcell</Filter>
+    </ClCompile>
+    <ClCompile Include="troop\troopMatrix.cpp">
+      <Filter>Source Files\troop</Filter>
+    </ClCompile>
+    <ClCompile Include="troop\troopMatrix_rect.cpp">
+      <Filter>Source Files\troop</Filter>
+    </ClCompile>
+    <ClCompile Include="gridcell\gridCellManager.cpp">
+      <Filter>Source Files\gridcell</Filter>
+    </ClCompile>
+    <ClCompile Include="algo\floyd.cpp">
+      <Filter>Source Files\algo</Filter>
+    </ClCompile>
+    <ClCompile Include="factory\objectFactory.cpp">
+      <Filter>Source Files\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\scene.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\sceneManager.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\sceneManagerPriv.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="time\timeManagerPriv.cpp">
+      <Filter>Source Files\time</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\resourceManagerPriv.cpp">
+      <Filter>Source Files\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\textureAnimation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="entity\entity.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="entity\sprite.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="troop\troppMatrix_rect5.cpp">
+      <Filter>Source Files\troop</Filter>
+    </ClCompile>
+    <ClCompile Include="gl\glPainter.cpp">
+      <Filter>Source Files\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="gl\glScopedColor.cpp">
+      <Filter>Source Files\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="entity\movingSprite.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="algo\sa.cpp">
+      <Filter>Source Files\algo</Filter>
+    </ClCompile>
+    <ClCompile Include="gl\glScopedLineWidth.cpp">
+      <Filter>Source Files\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\resourceManager.cpp">
+      <Filter>Source Files\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="entity\drawable.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="math\rhinoMath.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="boids\flocking.cpp">
+      <Filter>Source Files\boids</Filter>
+    </ClCompile>
+    <ClCompile Include="gl\glScopedVar.cpp">
+      <Filter>Source Files\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="rhino.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\JlCompress.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\qioapi.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\quaadler32.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\quacrc32.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\quagzipfile.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\quaziodevice.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\quazip.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\quazipdir.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\quazipfile.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\quazipfileinfo.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\quazipnewinfo.cpp">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\unzip.c">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zip\zip.c">
+      <Filter>Source Files\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="util\util.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\miniz.c">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="glwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="zip\quagzipfile.h">
+      <Filter>Source Files\zip</Filter>
+    </QtMoc>
+    <QtMoc Include="zip\quaziodevice.h">
+      <Filter>Source Files\zip</Filter>
+    </QtMoc>
+    <QtMoc Include="zip\quazipfile.h">
+      <Filter>Source Files\zip</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="drawable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objectFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="world.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glPainter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rhinoMath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gridCellManger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="troopMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="troop\troopMatrix_rect.h">
+      <Filter>Source Files\troop</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\sceneManagerPriv.h">
+      <Filter>Source Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="resourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\resourceManagerPriv.h">
+      <Filter>Source Files\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="textureAnimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="time\timeManagerPriv.h">
+      <Filter>Source Files\time</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="troop\troopMatrix_rect5.h">
+      <Filter>Source Files\troop</Filter>
+    </ClInclude>
+    <ClInclude Include="movingSprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rhino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gridcell\gridCell4Manager.h">
+      <Filter>Source Files\gridcell</Filter>
+    </ClInclude>
+    <ClInclude Include="gridcell\gridCell6Manager.h">
+      <Filter>Source Files\gridcell</Filter>
+    </ClInclude>
+    <ClInclude Include="serialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\crypt.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\ioapi.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\JlCompress.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\quaadler32.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\quachecksum32.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\quacrc32.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\quazip.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\quazip_global.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\quazipdir.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\quazipfileinfo.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\quazipnewinfo.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\unzip.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\zconf.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\zip.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zip\zlib.h">
+      <Filter>Source Files\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util\miniz.h">
+      <Filter>Source Files\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
