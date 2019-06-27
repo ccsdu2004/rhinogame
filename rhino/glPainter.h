@@ -67,6 +67,7 @@ public:
 	void drawGrid(float x,float y,float cellwidth,float cllheight,int col,int row);
 
 	void drawHexGon(float x,float y,float size);
+	void drawHexGon(float x,float y,float size,const QColor& color);
 	void drawHexGons(float x,float y,float size,int col,int row);
 
 	void drawTexture(uint32_t id,float* co,float* vertices);

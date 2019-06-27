@@ -61,9 +61,6 @@
     <Filter Include="Source Files\math">
       <UniqueIdentifier>{17da3983-eaad-4511-aed1-aa8a14f6b6f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\zip">
-      <UniqueIdentifier>{fdb8aff8-0af1-4c24-b220-5bf83e1d6b44}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\util">
       <UniqueIdentifier>{80f1e517-c401-429d-95c1-b6df224d4447}</UniqueIdentifier>
     </Filter>
@@ -156,64 +153,19 @@
     <ClCompile Include="rhino.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="zip\JlCompress.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\qioapi.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\quaadler32.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\quacrc32.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\quagzipfile.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\quaziodevice.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\quazip.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\quazipdir.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\quazipfile.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\quazipfileinfo.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\quazipnewinfo.cpp">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\unzip.c">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
-    <ClCompile Include="zip\zip.c">
-      <Filter>Source Files\zip</Filter>
-    </ClCompile>
     <ClCompile Include="util\util.cpp">
       <Filter>Source Files\util</Filter>
     </ClCompile>
     <ClCompile Include="util\miniz.c">
       <Filter>Source Files\util</Filter>
     </ClCompile>
+    <ClCompile Include="viewport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="glwidget.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="zip\quagzipfile.h">
-      <Filter>Source Files\zip</Filter>
-    </QtMoc>
-    <QtMoc Include="zip\quaziodevice.h">
-      <Filter>Source Files\zip</Filter>
-    </QtMoc>
-    <QtMoc Include="zip\quazipfile.h">
-      <Filter>Source Files\zip</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -289,56 +241,14 @@
     <ClInclude Include="serialize.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="zip\crypt.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\ioapi.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\JlCompress.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\quaadler32.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\quachecksum32.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\quacrc32.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\quazip.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\quazip_global.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\quazipdir.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\quazipfileinfo.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\quazipnewinfo.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\unzip.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\zconf.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\zip.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="zip\zlib.h">
-      <Filter>Source Files\zip</Filter>
-    </ClInclude>
     <ClInclude Include="util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="util\miniz.h">
       <Filter>Source Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="viewport.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

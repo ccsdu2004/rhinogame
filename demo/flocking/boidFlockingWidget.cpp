@@ -42,7 +42,7 @@ BoidFlockingWidget::BoidFlockingWidget(QWidget* parent) :
 	scene.reset(new Boids());
 	World::getInstance().getSceneManager()->addSceneAsCurrent(scene);
 
-	World::getInstance().getGridCellManager()->setGridCellVisible(false);
+	World::getInstance().getGridCellManager()->setGridCellVisible(true);
 
 	connect(maxSpeedSlider,SIGNAL(valueChanged(int)),this,SLOT(setMaxSpeed(int)));
 	connect(maxForceSlider, SIGNAL(valueChanged(int)), this, SLOT(setMaxForce(int)));

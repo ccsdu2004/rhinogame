@@ -41,7 +41,8 @@ void MinPath::glDraw()
 	foreach(auto item, points)
 	{
 		p = mgr->getWorldPosByCellCoordinate(item.x(), item.y());
-		painter->drawWrongNumber(p, res);
+		//painter->drawWrongNumber(p, res);
+		painter->drawHexGon(p.x(), p.y(), 9, QColor(Qt::red));
 	}
 
 	glColor3f(0.1, 0.6, 0.2);

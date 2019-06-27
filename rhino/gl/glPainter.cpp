@@ -2,6 +2,7 @@
 #include <QDebug>
 #include "glPainter.h"
 #include "rhinoMath.h"
+#include "world.h"
 
 GLPainter::GLPainter()
 {
@@ -55,7 +56,6 @@ void GLPainter::drawLine(float x1,float y1,float x2,float y2)
 	    glVertex2f(x2,y2);
 	glEnd();
 }
-
 
 void GLPainter::drawRectangle(float x,float y,float width,float height,bool filled)
 {
@@ -139,13 +139,36 @@ void GLPainter::drawHexGon(float x,float y,float size)
 	drawLine(x-size,y-k,x-2*size,y);
 }
 
-void GLPainter::drawHexGons(float x, float y, float size, int col, int row)
+void GLPainter::drawHexGon(float x, float y, float size, const QColor& color)
 {
+	setColor(color);
+	const float k = R3 * size;
+
+	glBegin(GL_POLYGON);
+	    glVertex2f(x + 2.0*size,y);
+	    glVertex2f(x + size,y + k);
+		glVertex2f(x - size,y + k);
+		glVertex2f(x - 2.0*size,y);
+		glVertex2f(x - size, y - k);
+		glVertex2f(x + size, y - k);
+		glVertex2f(x + 2.0*size, y);
+	glEnd();
+}
+
+void GLPainter::drawHexGons(float x, float y,float size,int col,int row)
+{
+	auto viewport = World::getInstance().getViewport();
+
 	size *= 0.5f;
 	for (int i = 0; i < col; i++)
 	{
-		for(int j=0;j<row;j++)
-		    drawHexGon(x+6.0*size*i-3.0*size*j,y+size*j*R3,size);
+		for (int j = 0; j < row; j++)
+		{
+			float cx = x + 6.0*size*i - 3.0*size*j;
+			float cy = y + size * j*R3;
+			if(viewport->isContain(cx,cy))
+				drawHexGon(cx, cy, size);
+		}
 	}
 }
 

@@ -6,6 +6,7 @@
 #include <QSize>
 #include <QRect>
 #include <QImage>
+#include <QPolygon>
 #include "drawable.h"
 #include "entity.h"
 
@@ -16,6 +17,7 @@ public:
 	explicit Sprite(const QPointF& position,const QSizeF& size);
 	explicit Sprite(const QPointF& position,const QSizeF& size,std::shared_ptr<QImage> image);
 	explicit Sprite(std::shared_ptr<QImage> image);
+	explicit Sprite(const QColor& color);
 	virtual ~Sprite();
 public:
 	void setSpriteID(int id);
@@ -32,6 +34,9 @@ public:
 
 	void setSpriteImage(std::shared_ptr<QImage> image);
 
+	void setSpriteColor(const QColor& spriteColor);
+	QColor getSpriteColor()const;
+
 	void showBorder(bool show);
 	bool isShowBorder()const;
 
@@ -43,11 +48,15 @@ public:
 	virtual void update(int time);
 private:
 	void drawTexture();
+	void drawPolygon();
 	void drawBorder();
 private:
 	int spriteID;
 	QString spriteName;
 	std::shared_ptr<QImage> spriteImage;
+
+	QColor spriteColor;
+
 	QString spriteText;
 	QColor  spriteTextColor;
 	bool   visibleBorder;

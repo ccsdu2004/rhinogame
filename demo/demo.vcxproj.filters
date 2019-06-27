@@ -37,6 +37,9 @@
     <Filter Include="Source Files\flocking">
       <UniqueIdentifier>{5ea72124-01af-473f-8b1d-27ca1a4f631d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\minpath">
+      <UniqueIdentifier>{c3f9a06f-73f0-4b15-ac08-08d17689c307}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="koch\kochScene.h">
@@ -50,6 +53,9 @@
     </ClInclude>
     <ClInclude Include="sceneTileMap.h">
       <Filter>Source Files\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="demo\minPath.h">
+      <Filter>Source Files\minpath</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="sceneTileMap.cpp">
       <Filter>Source Files\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="demo\minPath.cpp">
+      <Filter>Source Files\minpath</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

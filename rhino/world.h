@@ -8,7 +8,7 @@
 #include <QTime>
 #include <QWidget>
 #include "glPainter.h"
-#include "drawable.h"
+#include "viewport.h"
 #include "gridCellManger.h"
 #include "timeManager.h"
 #include "resourceManager.h"
@@ -36,14 +36,9 @@ public:
 	void setWorldResolution(int32_t resolution) { worldResolution = resolution; }
 	int32_t getWorldResolution()const { return worldResolution; }
 
-	void setViewPort(const QSize& vp);
-	QSize getViewPort()const;
-
-	void setViewPortPos(const QPoint& pos);
-	QPoint getViewPortPos()const;
-
 	int getFPS()const;
 public:
+	Viewport* getViewport()const { return viewport.get(); }
 	TimeManager* getTimeManager()const { return timeManager.get(); }
 	ResourceManager* getResourceManager()const { return resourceManager.get(); }
 	GridCellManager* getGridCellManager()const { return gridCellManager.get(); }
@@ -69,9 +64,8 @@ private:
 	QString worldName;
 	QSize worldSize;
 	int32_t worldResolution;
-	QSize viewport;
-	QPoint viewportPos;
 
+	std::unique_ptr<Viewport> viewport;
 	std::unique_ptr<TimeManager> timeManager;
 	std::unique_ptr<ResourceManager> resourceManager;
 	std::unique_ptr<GridCellManager> gridCellManager;

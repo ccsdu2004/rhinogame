@@ -33,6 +33,7 @@ void Boids::initGL()
 		sprite->setVel(QVector2D(0.2*((qrand() % 9)-4),0.2*((qrand() %9)-4)));
 		sprite->setSize(QSize(16,16));
 		sprite->setSpriteID(i);
+		//sprite->setSpriteColor(QColor(qrand()%255,qrand()%255,qrand()%255));
 		flocking->addSprite(sprite);
 	}
 }

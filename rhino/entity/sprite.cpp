@@ -5,6 +5,8 @@
 #include "resourceManager.h"
 #include <iostream>
 
+#define SPRITE_POLYGON_SIZE 0.75
+
 Sprite::Sprite():
 spriteID(-1),
 visibleBorder(false),
@@ -76,6 +78,16 @@ void Sprite::setSpriteImage(std::shared_ptr<QImage> image)
 	spriteImage = image;
 }
 
+void Sprite::setSpriteColor(const QColor& color)
+{
+	spriteColor = color;
+}
+
+QColor Sprite::getSpriteColor()const
+{
+	return spriteColor;
+}
+
 void Sprite::showBorder(bool show)
 {
 	visibleBorder = show;
@@ -98,7 +110,10 @@ QColor Sprite::getBorderColor()const
 
 void Sprite::glDraw()
 {
-	drawTexture();
+	if(spriteImage)
+		drawTexture();
+	else
+		drawPolygon();
 	drawBorder();
 }
 
@@ -110,7 +125,9 @@ void Sprite::qtDraw(QWidget* widget)
 	QPainter painter(widget);
 	painter.setPen(spriteTextColor);
 	painter.setFont(World::getInstance().getResourceManager()->getSpriteFont());
-	QPoint pos(getPosition().x(),World::getInstance().getViewPort().height()-getPosition().y());
+
+	auto viewportSize = World::getInstance().getViewport()->getViewSize();
+	QPoint pos(getPosition().x(),viewportSize.height()-getPosition().y());
 	
 	const int offset = 20;
 	
@@ -124,9 +141,6 @@ void Sprite::update(int time)
 
 void Sprite::drawTexture()
 {
-	if(!spriteImage)
-		return;
-
 	auto texture = World::getInstance().getResourceManager()->buildTexture(spriteImage);
 	if (!texture)
 		return;
@@ -143,13 +157,43 @@ void Sprite::drawTexture()
 	glRotatef(getRotate(), 0, 0, 1.0f);
 	glTranslatef(-pos.x(),-pos.y(), 0.0f);
 
-	float vertices[] = {
+	float vertices[] = 
+	{
 		pos.x() - size.width()*0.5f,pos.y() - size.height()*0.5f,
 		pos.x() + size.width()*0.5f,pos.y() - size.height()*0.5f,
 		pos.x() + size.width()*0.5f,pos.y()+size.height()*0.5f,
-		pos.x() - size.width()*0.5f,pos.y()+ size.height()*0.5f};
+		pos.x() - size.width()*0.5f,pos.y()+ size.height()*0.5f
+	};
 
 	World::getInstance().getGLPainter()->drawTexture(id,cor,vertices);
+	glPopMatrix();
+}
+
+void Sprite::drawPolygon()
+{
+	GLScopedColor scoped;
+	
+	glPushMatrix();
+	glTranslatef(pos.x(),pos.y(),0.0f);
+	glRotatef(getRotate(),0,0,1.0f);
+	glTranslatef(-pos.x(),-pos.y(),0.0f);
+
+	World& world = World::getInstance();
+	
+	if (world.getGridCellManager()->getCellMode() == GridCellManager_CellMode6)
+	{
+		float size = std::min<float>(getSize().width(), getSize().height())*SPRITE_POLYGON_SIZE;
+		world.getGLPainter()->drawHexGon(pos.x(), pos.y(), size, spriteColor);
+	}
+	else
+	{
+		world.getGLPainter()->setColor(spriteColor);
+		float w = getSize().width()*SPRITE_POLYGON_SIZE;
+		float h = getSize().height()*SPRITE_POLYGON_SIZE;
+		float x = getPosition().x();
+		float y = getPosition().y();
+		world.getGLPainter()->drawRectangle(x-0.5*w,y-0.5*h,w,h,true);
+	}
 	glPopMatrix();
 }
 

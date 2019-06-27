@@ -100,8 +100,8 @@ void SceneTileMap::update(int time)
 
 void SceneTileMap::glDraw()
 {
-	QSize viewport = World::getInstance().getViewPort();
-	QPoint viewportPos = World::getInstance().getViewPortPos();
+	QSize viewport = World::getInstance().getViewport()->getViewSize();
+	QPoint viewportPos = World::getInstance().getViewport()->getViewPosition();
 
 	int tileSize = World::getInstance().getWorldResolution()/ 2;
 	for(int i = 0; i < map.size(); i++)

@@ -21,8 +21,8 @@ void KochScene::glDraw()
 
 	World::getInstance().getGLPainter()->setColor(Qt::gray);
 
-	int width = World::getInstance().getViewPort().width();
-	int height = World::getInstance().getViewPort().height();
+	int width = World::getInstance().getViewport()->getViewSize().width();
+	int height = World::getInstance().getViewport()->getViewSize().height();
  
 	QVector2D beg,end;
 	beg.setX(width/3);

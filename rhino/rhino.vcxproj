@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
+    <ProjectGuid>{60E4D394-138A-43FC-BF36-553D3F286795}</ProjectGuid>
     <Keyword>Qt4VSv1.0</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -145,20 +145,8 @@
     <ClCompile Include="troop\troppMatrix_rect5.cpp" />
     <ClCompile Include="util\miniz.c" />
     <ClCompile Include="util\util.cpp" />
+    <ClCompile Include="viewport.cpp" />
     <ClCompile Include="world.cpp" />
-    <ClCompile Include="zip\JlCompress.cpp" />
-    <ClCompile Include="zip\qioapi.cpp" />
-    <ClCompile Include="zip\quaadler32.cpp" />
-    <ClCompile Include="zip\quacrc32.cpp" />
-    <ClCompile Include="zip\quagzipfile.cpp" />
-    <ClCompile Include="zip\quaziodevice.cpp" />
-    <ClCompile Include="zip\quazip.cpp" />
-    <ClCompile Include="zip\quazipdir.cpp" />
-    <ClCompile Include="zip\quazipfile.cpp" />
-    <ClCompile Include="zip\quazipfileinfo.cpp" />
-    <ClCompile Include="zip\quazipnewinfo.cpp" />
-    <ClCompile Include="zip\unzip.c" />
-    <ClCompile Include="zip\zip.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="drawable.h" />
@@ -187,33 +175,7 @@
     <ClInclude Include="troop\troopMatrix_rect.h" />
     <ClInclude Include="util.h" />
     <ClInclude Include="util\miniz.h" />
-    <ClInclude Include="zip\crypt.h" />
-    <ClInclude Include="zip\ioapi.h" />
-    <ClInclude Include="zip\JlCompress.h" />
-    <ClInclude Include="zip\quaadler32.h" />
-    <ClInclude Include="zip\quachecksum32.h" />
-    <ClInclude Include="zip\quacrc32.h" />
-    <ClInclude Include="zip\quazip.h" />
-    <ClInclude Include="zip\quazipdir.h" />
-    <ClInclude Include="zip\unzip.h" />
-    <ClInclude Include="zip\zconf.h" />
-    <ClInclude Include="zip\zip.h" />
-    <ClInclude Include="zip\zlib.h" />
-    <QtMoc Include="zip\quazipfile.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
-    </QtMoc>
-    <ClInclude Include="zip\quazipfileinfo.h" />
-    <ClInclude Include="zip\quazipnewinfo.h" />
-    <ClInclude Include="zip\quazip_global.h" />
-    <QtMoc Include="zip\quaziodevice.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
-    </QtMoc>
-    <QtMoc Include="zip\quagzipfile.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
-    </QtMoc>
+    <ClInclude Include="viewport.h" />
     <QtMoc Include="glwidget.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>

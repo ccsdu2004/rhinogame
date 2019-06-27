@@ -48,7 +48,8 @@ logName("rhino"),
 worldName("rhino"),
 worldSize(640,480),
 worldResolution(32),
-viewport(640,480)
+viewport(new Viewport()),
+painter(new GLPainter())
 {
 	qsrand(QTime(0,0,0).msecsTo(QTime::currentTime()));
 }
@@ -68,8 +69,6 @@ void World::init(int cellmode,const QString& logname)
 	logName = logname;
 	qInstallMessageHandler(customMessageHandler);
 
-	painter.reset(new GLPainter());
-
 	if(cellmode == GridCellManager_CellMode4  )
 		gridCellManager.reset(new GridCell4Manager());
 	else
@@ -86,26 +85,6 @@ void World::initGL()
 	sceneManager->initGL();
 }
 
-void World::setViewPort(const QSize& vp)
-{
-	viewport = vp;
-}
-
-QSize World::getViewPort()const
-{
-	return viewport;
-}
-
-void World::setViewPortPos(const QPoint& pos)
-{
-	viewportPos = pos;
-}
-
-QPoint World::getViewPortPos()const
-{
-	return viewportPos;
-}
-
 int World::getFPS()const
 {
 	return fps;
@@ -114,7 +93,7 @@ int World::getFPS()const
 void World::glDraw()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	
+	painter->setBackgroundColor(getBackGroundColor());
 	sceneManager->glDraw();
 	gridCellManager->drawGridCell();
 }
@@ -138,7 +117,7 @@ void World::update()
 
 void World::resizeGL(int width,int height)
 {
-	viewport = QSize(width,height);
+	viewport->setViewSize(width,height);
 	sceneManager->resizeGL(width,height);
 }
 

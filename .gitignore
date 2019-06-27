@@ -2,3 +2,6 @@
 *.log
 *.tlog
 /rhino/GeneratedFiles/Release/*.cpp
+/.vs/rhino/v15/*.suo
+*.ipch
+*.db

@@ -12,9 +12,7 @@ Scene::~Scene()
 
 void Scene::resizeGL(int width,int height)
 {
-	World::getInstance().setViewPort(QSize(width,height));
-	auto vp = World::getInstance().getViewPortPos();
-	glViewport(vp.x(),vp.y(),width+ vp.x(),height+ vp.y());
+	glViewport(0,0,width,height);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
