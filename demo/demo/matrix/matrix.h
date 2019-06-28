@@ -5,18 +5,8 @@
 #include <QFont>
 #include "scene.h"
 #include "movingSprite.h"
+#include "mysprite.h"
 #include "troopMatrix.h"
-
-class MySprite : public MovingSprite
-{
-public:
-	MySprite() :t(0.0f) {}
-	bool isMoving() { return t < 1.0f; }
-
-	QVector2D from;
-	QVector2D to;
-	float   t;
-};
 
 class MatrixDemo : public Scene
 {
@@ -29,8 +19,8 @@ public:
 	void qtDraw(QWidget* widget);
 	void update(int time);
 public:
-	void mousePressEvent(QMouseEvent* event);
-	void mouseMoveEvent(QMouseEvent* event);
+	void mousePressEvent(QMouseEvent* event,int x,int y);
+	void mouseMoveEvent(QMouseEvent* event,int x,int y);
 	void keyPressEvent(QKeyEvent* event);
 private:
 	QList<QPointF> getSpritePositions();

@@ -121,14 +121,14 @@ void World::resizeGL(int width,int height)
 	sceneManager->resizeGL(width,height);
 }
 
-void World::mousePressEvent(QMouseEvent* event)
+void World::mousePressEvent(QMouseEvent* event,int x,int y)
 {
-	sceneManager->mousePressEvent(event);
+	sceneManager->mousePressEvent(event,x,y);
 }
 
-void World::mouseMoveEvent(QMouseEvent* event)
+void World::mouseMoveEvent(QMouseEvent* event,int x,int y)
 {
-	sceneManager->mouseMoveEvent(event);
+	sceneManager->mouseMoveEvent(event,x,y);
 }
 
 void World::keyPressEvent(QKeyEvent* event)

@@ -51,8 +51,8 @@ public:
 	void update();
 public:
 	void resizeGL(int width,int height);
-	void mousePressEvent(QMouseEvent* event);
-	void mouseMoveEvent(QMouseEvent* event);
+	void mousePressEvent(QMouseEvent* event,int x,int y);
+	void mouseMoveEvent(QMouseEvent* event,int x,int y);
 	void keyPressEvent(QKeyEvent* event);
 private:
 	void drawGridCell();

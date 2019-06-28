@@ -5,7 +5,7 @@
 class RHINO_EXPORT TimeManager
 {
 public:
-	virtual ~TimeManager(){}
+	virtual ~TimeManager() = default;
 
 #define TimeManager_Speed_Slow   1
 #define TimeManager_Speed_Normal 2

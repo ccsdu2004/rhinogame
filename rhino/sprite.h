@@ -43,6 +43,7 @@ public:
 	void setBorderColor(const QColor& color);
 	QColor getBorderColor()const;
 public:
+	virtual void initGL();
 	virtual void glDraw();
 	virtual void qtDraw(QWidget* widget);
 	virtual void update(int time);

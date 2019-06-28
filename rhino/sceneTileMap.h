@@ -3,10 +3,15 @@
 #include <memory>
 #include <QVector>
 #include <QImage>
+#include <QMap>
+#include "rhino.h"
 #include "sprite.h"
+#include "drawable.h"
 
-class SceneTileMap : public Scene
+class RHINO_EXPORT SceneTileMap : public Drawable
 {
+public:
+	static std::shared_ptr<SceneTileMap> createTileMap(int type);
 #define SceneMap_Tile_NA   -1
 #define SceneMap_Tile_DEF   0
 #define SceneMap_Tile_SEA   1
@@ -16,24 +21,23 @@ class SceneTileMap : public Scene
 #define SceneMap_Tile_SNOW  5
 public:
 	SceneTileMap();
-	~SceneTileMap() = default;
+	virtual ~SceneTileMap() = default;
 public:
-	bool loadTileMapFromCSV(const QString& file,bool fromtop = false);
-	
-	bool setDefaultTileImage(std::shared_ptr<QImage> tile);
-	bool addTileImage(int id,std::shared_ptr<QImage> tile);
+	virtual bool loadTileMapFromCSV(const QString& file,bool fromtop = false) = 0;
 
-	void initGL();
-	void glDraw();
-	void qtDraw(QWidget* widget);
-	void update(int time);
+	bool setDefaultTileImage(std::shared_ptr<QImage> tile);
+	bool addTileImage(int id, std::shared_ptr<QImage> tile);
+
+	virtual int getTileIDByTilePos(int x,int y) = 0;
+
+	void clear();
 public:
-	void resizeGL(int width,int height);
-private:
+	virtual void glDraw() = 0;
+protected:
 	int col,row;
 	std::shared_ptr<Sprite> defSprite;
 	QMap<int,std::shared_ptr<Sprite>> tileSprites;
-	QVector<int> map;
+	QVector<int> terrain;
 };
 
 #endif

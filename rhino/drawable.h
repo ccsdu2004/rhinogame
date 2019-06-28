@@ -16,6 +16,7 @@ public:
 	void setZOrder(float z);
 	float getZOrder()const { return zOrder; }
 public:	
+	virtual void initGL() = 0;
 	virtual void glDraw() = 0;
 	virtual void qtDraw(QWidget* widget) = 0;
 	virtual void update(int time) = 0;

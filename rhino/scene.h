@@ -24,8 +24,8 @@ public:
 	virtual void update(int time) = 0;
 public:
 	virtual void resizeGL(int width,int height);
-	virtual void mousePressEvent(QMouseEvent* event) {}
-	virtual void mouseMoveEvent(QMouseEvent* event) {}
+	virtual void mousePressEvent(QMouseEvent* event, int x, int y) {}
+	virtual void mouseMoveEvent(QMouseEvent* event, int x, int y) {}
 	virtual void keyPressEvent(QKeyEvent* event) {}
 private:
 	QString sceneName;

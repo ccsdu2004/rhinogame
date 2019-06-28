@@ -32,6 +32,7 @@ public:
 public:
 	void applyBehaviour(int time);
 public:
+	void initGL();
 	void glDraw();
 	void qtDraw(QWidget* widget);
 	void update(int time);

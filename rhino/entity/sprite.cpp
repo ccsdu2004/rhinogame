@@ -2,6 +2,7 @@
 #include <QPainter>
 #include "sprite.h"
 #include "world.h"
+#include "rhinoMath.h"
 #include "resourceManager.h"
 #include <iostream>
 
@@ -108,6 +109,10 @@ QColor Sprite::getBorderColor()const
 	return borderColor;
 }
 
+void Sprite::initGL()
+{
+}
+
 void Sprite::glDraw()
 {
 	if(spriteImage)
@@ -147,14 +152,16 @@ void Sprite::drawTexture()
 
 	auto id = texture->textureId();
 
-	float cor[] = { 0,1,1,1,1,0,0,0 };
+	float cor[] = {0,0,1,0,1,1,0,1};
 
 	QVector2D pos = getPosition();
 	QSizeF  size = getSize();
 
 	glPushMatrix();
 	glTranslatef(pos.x(),pos.y(),0.0f);
-	glRotatef(getRotate(), 0, 0, 1.0f);
+	float r = getRotate();
+	if(!rhino::isZero(r))
+		glRotatef(getRotate(), 0, 0, 1.0f);
 	glTranslatef(-pos.x(),-pos.y(), 0.0f);
 
 	float vertices[] = 

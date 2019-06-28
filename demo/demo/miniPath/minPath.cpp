@@ -74,7 +74,7 @@ void MinPath::update(int time)
 {
 }
 
-void MinPath::mousePressEvent(QMouseEvent* event)
+void MinPath::mousePressEvent(QMouseEvent* event,int x,int y)
 {
 	if (event->button() == Qt::MouseButton::RightButton)
 	{
@@ -97,7 +97,7 @@ void MinPath::mousePressEvent(QMouseEvent* event)
 	}
 }
 
-void MinPath::mouseMoveEvent(QMouseEvent* event)
+void MinPath::mouseMoveEvent(QMouseEvent* event,int x,int y)
 {
 }
 

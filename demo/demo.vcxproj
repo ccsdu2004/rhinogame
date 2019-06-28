@@ -93,7 +93,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <OutputFile>..\output\demo.exe</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;..\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;..\output;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;opengl32.lib;rhino.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -113,23 +113,29 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtMoc Include="flocking\BoidFlockingWidget.h" />
-    <ClInclude Include="demo\minPath.h" />
-    <ClInclude Include="flocking\boids.h" />
-    <ClInclude Include="koch\kochScene.h" />
-    <ClInclude Include="sceneTileMap.h" />
-    <ClInclude Include="tile\tileScene.h" />
+    <ClInclude Include="demo\move\moveScene.h" />
+    <ClInclude Include="demo\title\tileScene.h" />
+    <ClInclude Include="mysprite.h" />
+    <QtMoc Include="demo\flocking\BoidFlockingWidget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\..\rhino</IncludePath>
+    </QtMoc>
+    <ClInclude Include="demo\flocking\boids.h" />
+    <ClInclude Include="demo\koch\kochScene.h" />
+    <ClInclude Include="demo\matrix\matrix.h" />
+    <ClInclude Include="demo\miniPath\minPath.h" />
     <QtMoc Include="rhinoWidget.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="demo\minPath.cpp" />
-    <ClCompile Include="flocking\boidFlockingWidget.cpp" />
-    <ClCompile Include="flocking\boids.cpp" />
-    <ClCompile Include="koch\kochScene.cpp" />
+    <ClCompile Include="demo\flocking\boidFlockingWidget.cpp" />
+    <ClCompile Include="demo\flocking\boids.cpp" />
+    <ClCompile Include="demo\koch\kochScene.cpp" />
+    <ClCompile Include="demo\matrix\matrix.cpp" />
+    <ClCompile Include="demo\miniPath\minPath.cpp" />
+    <ClCompile Include="demo\move\moveScene.cpp" />
+    <ClCompile Include="demo\title\tileScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="rhinoWidget.cpp" />
-    <ClCompile Include="sceneTileMap.cpp" />
-    <ClCompile Include="tile\tileScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

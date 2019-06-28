@@ -40,55 +40,70 @@
     <Filter Include="Source Files\minpath">
       <UniqueIdentifier>{c3f9a06f-73f0-4b15-ac08-08d17689c307}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\matrix">
+      <UniqueIdentifier>{633555ed-68b9-4224-bfb0-f2ceeeda85fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\move">
+      <UniqueIdentifier>{b138d0f9-fe52-40f7-b4d3-e0f613741fad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="koch\kochScene.h">
+    <ClInclude Include="demo\miniPath\minPath.h">
+      <Filter>Source Files\minpath</Filter>
+    </ClInclude>
+    <ClInclude Include="demo\matrix\matrix.h">
+      <Filter>Source Files\matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="demo\koch\kochScene.h">
       <Filter>Source Files\koch</Filter>
     </ClInclude>
-    <ClInclude Include="tile\tileScene.h">
-      <Filter>Source Files\tile</Filter>
-    </ClInclude>
-    <ClInclude Include="flocking\boids.h">
+    <ClInclude Include="demo\flocking\boids.h">
       <Filter>Source Files\flocking</Filter>
     </ClInclude>
-    <ClInclude Include="sceneTileMap.h">
+    <ClInclude Include="demo\title\tileScene.h">
       <Filter>Source Files\tile</Filter>
     </ClInclude>
-    <ClInclude Include="demo\minPath.h">
-      <Filter>Source Files\minpath</Filter>
+    <ClInclude Include="demo\move\moveScene.h">
+      <Filter>Source Files\move</Filter>
+    </ClInclude>
+    <ClInclude Include="mysprite.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="koch\kochScene.cpp">
-      <Filter>Source Files\koch</Filter>
-    </ClCompile>
     <ClCompile Include="rhinoWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tile\tileScene.cpp">
-      <Filter>Source Files\tile</Filter>
-    </ClCompile>
-    <ClCompile Include="flocking\boidFlockingWidget.cpp">
-      <Filter>Source Files\flocking</Filter>
-    </ClCompile>
-    <ClCompile Include="flocking\boids.cpp">
-      <Filter>Source Files\flocking</Filter>
-    </ClCompile>
-    <ClCompile Include="sceneTileMap.cpp">
-      <Filter>Source Files\tile</Filter>
-    </ClCompile>
-    <ClCompile Include="demo\minPath.cpp">
+    <ClCompile Include="demo\miniPath\minPath.cpp">
       <Filter>Source Files\minpath</Filter>
+    </ClCompile>
+    <ClCompile Include="demo\matrix\matrix.cpp">
+      <Filter>Source Files\matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="demo\koch\kochScene.cpp">
+      <Filter>Source Files\koch</Filter>
+    </ClCompile>
+    <ClCompile Include="demo\flocking\boidFlockingWidget.cpp">
+      <Filter>Source Files\flocking</Filter>
+    </ClCompile>
+    <ClCompile Include="demo\flocking\boids.cpp">
+      <Filter>Source Files\flocking</Filter>
+    </ClCompile>
+    <ClCompile Include="demo\title\tileScene.cpp">
+      <Filter>Source Files\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="demo\move\moveScene.cpp">
+      <Filter>Source Files\move</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="rhinoWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="flocking\BoidFlockingWidget.h">
+    <QtMoc Include="demo\flocking\BoidFlockingWidget.h">
       <Filter>Source Files\flocking</Filter>
     </QtMoc>
   </ItemGroup>

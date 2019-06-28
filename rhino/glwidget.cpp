@@ -56,12 +56,16 @@ void GLWidget::resizeGL(int width,int height)
 
 void GLWidget::mousePressEvent(QMouseEvent* event)
 {
-	World::getInstance().mousePressEvent(event);
+	int mx = event->pos().x();
+	int my = World::getInstance().getViewport()->getViewSize().height() - event->pos().y();
+	World::getInstance().mousePressEvent(event,mx,my);
 }
 
 void GLWidget::mouseMoveEvent(QMouseEvent* event)
 {
-	World::getInstance().mouseMoveEvent(event);
+	int mx = event->pos().x();
+	int my = World::getInstance().getViewport()->getViewSize().height() - event->pos().y();
+	World::getInstance().mouseMoveEvent(event,mx,my);
 }
 
 void GLWidget::keyPressEvent(QKeyEvent* event)

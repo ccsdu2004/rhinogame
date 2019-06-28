@@ -5,3 +5,5 @@
 /.vs/rhino/v15/*.suo
 *.ipch
 *.db
+/demo/.vs/demo/v15/*.suo
+*.opendb

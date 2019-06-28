@@ -94,10 +94,11 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <OutputFile>..\output\$(ProjectName).dll</OutputFile>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;E:\c++lib\2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5OpenGL.lib;opengl32.lib;zlib.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>..\output\$(TargetName).lib</ImportLibrary>
     </Link>
     <QtMoc>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
@@ -125,6 +126,7 @@
     <ClCompile Include="entity\sprite.cpp" />
     <ClCompile Include="factory\objectFactory.cpp" />
     <ClCompile Include="glwidget.cpp" />
+    <ClCompile Include="gl\glCheck.cpp" />
     <ClCompile Include="gl\glPainter.cpp" />
     <ClCompile Include="gl\glScopedColor.cpp" />
     <ClCompile Include="gl\glScopedLineWidth.cpp" />
@@ -139,6 +141,9 @@
     <ClCompile Include="scene\scene.cpp" />
     <ClCompile Include="scene\sceneManager.cpp" />
     <ClCompile Include="scene\sceneManagerPriv.cpp" />
+    <ClCompile Include="tile\sceneTileMap.cpp" />
+    <ClCompile Include="tile\sceneTileMap4.cpp" />
+    <ClCompile Include="tile\sceneTileMap6.cpp" />
     <ClCompile Include="time\timeManagerPriv.cpp" />
     <ClCompile Include="troop\troopMatrix.cpp" />
     <ClCompile Include="troop\troopMatrix_rect.cpp" />
@@ -151,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="drawable.h" />
     <ClInclude Include="glPainter.h" />
+    <ClInclude Include="gl\glCheck.h" />
     <ClInclude Include="gridCellManger.h" />
     <ClInclude Include="gridcell\gridCell4Manager.h" />
     <ClInclude Include="gridcell\gridCell6Manager.h" />
@@ -164,11 +170,14 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets</IncludePath>
     </ClInclude>
     <ClInclude Include="sceneManager.h" />
+    <ClInclude Include="sceneTileMap.h" />
     <ClInclude Include="scene\sceneManagerPriv.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="serialize.h" />
     <ClInclude Include="sprite.h" />
     <ClInclude Include="textureAnimation.h" />
+    <ClInclude Include="tile\sceneTileMap4.h" />
+    <ClInclude Include="tile\sceneTileMap6.h" />
     <ClInclude Include="timeManager.h" />
     <ClInclude Include="time\timeManagerPriv.h" />
     <ClInclude Include="troopMatrix.h" />

@@ -2,7 +2,7 @@
 #define BOID_FLOCKING_WIDGET_H
 #include <QSlider>
 #include "glwidget.h"
-#include "flocking/boids.h"
+#include "demo/flocking/boids.h"
 
 class BoidFlockingWidget : public QWidget
 {

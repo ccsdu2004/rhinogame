@@ -7,7 +7,7 @@
 
 TileScene::TileScene()
 {
-	tileMap.reset(new SceneTileMap());
+	tileMap = SceneTileMap::createTileMap(6);
 }
 
 TileScene::~TileScene()
@@ -16,12 +16,13 @@ TileScene::~TileScene()
 
 void TileScene::initGL()
 {
-	bool loaded = tileMap->loadTileMapFromCSV("data/desert.csv");
+	bool loaded = tileMap->loadTileMapFromCSV("data/desert.csv",false);
 	std::cout << "load:"<<loaded << std::endl;
 
 	glShadeModel(GL_FLAT);
 
 	auto tiles = QImage("data/tmw_desert_spacing.png");
+	//auto tiles = QImage("tile/grass.png");
 
 	auto resMgr = World::getInstance().getResourceManager();
 
@@ -54,12 +55,18 @@ void TileScene::update(int time)
 {
 }
 
-void TileScene::mousePressEvent(QMouseEvent* event)
+void TileScene::mousePressEvent(QMouseEvent* event,int x,int y)
 {
+	static bool showGrid = false;
+	if (event->button() == Qt::LeftButton)
+	{
+		World::getInstance().getGridCellManager()->setGridCellVisible(showGrid = !showGrid);
+	}
 
+	event->ignore();
 }
 
-void TileScene::mouseMoveEvent(QMouseEvent* event)
+void TileScene::mouseMoveEvent(QMouseEvent* event,int x,int y)
 {
 }
 

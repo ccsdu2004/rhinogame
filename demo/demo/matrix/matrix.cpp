@@ -6,22 +6,11 @@
 #include "rhinoMath.h"
 #include <iostream>
 
-#define n (145)
+#define n (69)
 #define TIME 60.0
 
 MatrixDemo::MatrixDemo()
 {
-	QList<QPointF> lst = { {1,2},{2,4},{3,5},{4,0} };
-	QList<QPointF> vec = { {1,2},{2,3},{3,6},{4,2} };
-
-	auto d=  sa(lst,vec,20);
-
-	/*std::cout << d << std::endl;
-	for (int i = 0; i < lst.size(); i++)
-	{
-		std::cout << lst[i].x() << " " << lst[i].y() << " -> " << vec[i].x() << " " << vec[i].y() << std::endl;
-	}*/
-
 	matrixType = TroopMatrix_Rect5;
 	matrix = TroopMatrix::createTroopMatrix(TroopMatrix_Rect5);
 	matrix->setAttirbuteValue(0,1.0);
@@ -30,9 +19,8 @@ MatrixDemo::MatrixDemo()
 	for(int i = 0; i < n; i++)
 	{
 		std::shared_ptr<MySprite> sprite(new MySprite);
-		sprite->setImageFile("textures/grass.png");
-		//sprite->setImageFile(QString("data/side%1.png").arg(qrand()%6+1));
-		sprite->setSize(QSize(16,16));
+		sprite->setSpriteColor(QColor(qrand()%255,qrand()%255,qrand()%255));
+		sprite->setSize(QSize(12,12));
 		sprite->setPosition(QVector2D(list[i].x(),list[i].y()));
 		sprites += sprite;
 	}
@@ -48,12 +36,6 @@ void MatrixDemo::initGL()
 {
 	QColor bgcolor(30,30,120,120);
 	World::getInstance().getGLPainter()->setBackgroundColor(bgcolor);
-
-	for (int i = 1; i < 7; i++)
-	{
-		//auto image = World::getInstance().getResourceManager()->getImageByFile(QString("data/side%1.png").arg(i));
-		//World::getInstance().getResourceManager()->buildTexture(image);
-	}
 }
 
 void MatrixDemo::glDraw()
@@ -98,7 +80,7 @@ void MatrixDemo::update(int time)
 	}
 }
 
-void MatrixDemo::mousePressEvent(QMouseEvent* event)
+void MatrixDemo::mousePressEvent(QMouseEvent* event,int x,int y)
 {
 	if (moving)
 		return;
@@ -108,6 +90,7 @@ void MatrixDemo::mousePressEvent(QMouseEvent* event)
 		if (matrixType == TroopMatrix_Rect)
 		{
 			matrix = TroopMatrix::createTroopMatrix(TroopMatrix_Rect5);
+			matrix->setAttirbuteValue(0, 1.0);
 			auto list = matrix->makeMatrix(640, 480, n);
 
 			for (int i = 0; i < n; i++)
@@ -142,7 +125,7 @@ void MatrixDemo::mousePressEvent(QMouseEvent* event)
 	moving = true;
 }
 
-void MatrixDemo::mouseMoveEvent(QMouseEvent* event)
+void MatrixDemo::mouseMoveEvent(QMouseEvent* event,int x,int y)
 {
 }
 

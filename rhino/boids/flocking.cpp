@@ -165,6 +165,10 @@ void Flocking::applyBehaviour(int time)
 	}
 }
 
+void Flocking::initGL()
+{
+}
+
 void Flocking::glDraw()
 {
 	if (!isVisible())

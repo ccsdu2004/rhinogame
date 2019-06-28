@@ -64,6 +64,9 @@
     <Filter Include="Source Files\util">
       <UniqueIdentifier>{80f1e517-c401-429d-95c1-b6df224d4447}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\tile">
+      <UniqueIdentifier>{5c5a0fa1-ade4-4f03-8349-64d31ae7070b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="world.cpp">
@@ -162,6 +165,18 @@
     <ClCompile Include="viewport.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gl\glCheck.cpp">
+      <Filter>Source Files\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="tile\sceneTileMap.cpp">
+      <Filter>Source Files\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="tile\sceneTileMap4.cpp">
+      <Filter>Source Files\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="tile\sceneTileMap6.cpp">
+      <Filter>Source Files\tile</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="glwidget.h">
@@ -249,6 +264,18 @@
     </ClInclude>
     <ClInclude Include="viewport.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gl\glCheck.h">
+      <Filter>Source Files\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="tile\sceneTileMap4.h">
+      <Filter>Source Files\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneTileMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tile\sceneTileMap6.h">
+      <Filter>Source Files\tile</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

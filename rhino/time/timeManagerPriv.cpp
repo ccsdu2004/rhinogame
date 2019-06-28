@@ -14,6 +14,8 @@ TimeManagerPriv::~TimeManagerPriv()
 
 void TimeManagerPriv::setSpeed(int speed)
 {
+	if(speed < 0 || speed > TimeManager_Speed_4X)
+		return;
 	timeSpeed = speed;
 }
 

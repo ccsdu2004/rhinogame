@@ -1,13 +1,14 @@
 #include "rhinoWidget.h"
 #include <QtWidgets/QApplication>
 #include "world.h"
-#include "demo/minPath.h"
+#include "demo/miniPath/minPath.h"
 #include "demo/animation.h"
-#include "demo/matrix.h"
-#include "koch/kochScene.h"
+#include "demo/matrix/matrix.h"
+#include "demo/koch/kochScene.h"
+#include "demo/title/tileScene.h"
+#include "demo/flocking/BoidFlockingWidget.h"
+#include "demo/move/moveScene.h"
 #include "rhinoWidget.h"
-#include "tile/tileScene.h"
-#include "flocking/BoidFlockingWidget.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,16 +16,16 @@ int main(int argc, char *argv[])
 
 	rhino w;
 	World::getInstance().init(GridCellManager_CellMode6,"rhino.log");
-	World::getInstance().setWorldResolution(24);
+	World::getInstance().setWorldResolution(16);
 
 	World::getInstance().getGridCellManager()->setGridCellVisible(true);
-	World::getInstance().setBackGroundColor(Qt::blue);
+	World::getInstance().setBackGroundColor(QColor(60,60,96));
 
 	QFont font;
 	font.setPointSize(9);
 	World::getInstance().getResourceManager()->setSpriteFont(font);
 
-	std::shared_ptr<Scene> scene(new MinPath());
+	std::shared_ptr<Scene> scene(new MoveScene);
 	World::getInstance().getSceneManager()->addSceneAsCurrent(scene);
 
 	w.show();
