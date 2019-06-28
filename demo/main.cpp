@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	font.setPointSize(9);
 	World::getInstance().getResourceManager()->setSpriteFont(font);
 
-	std::shared_ptr<Scene> scene(new MoveScene);
+	std::shared_ptr<Scene> scene(new MatrixDemo);
 	World::getInstance().getSceneManager()->addSceneAsCurrent(scene);
 
 	w.show();
